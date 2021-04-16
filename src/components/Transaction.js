@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ transaction, children }) => {
   const { deleteTransaction } = useContext(GlobalContext)
   const sign = transaction.amout < 0 ? '-' : '+'
+  // console.log(React.Children.toArray(children))
   return (
     <>
       <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
