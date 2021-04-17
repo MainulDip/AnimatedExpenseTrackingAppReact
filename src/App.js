@@ -8,10 +8,10 @@ import { GlobalProvider } from './context/GlobalState'
 
 import { useTrail, a } from 'react-spring'
 
-function Trail ({ open, children, ...props }) {
+function Trail (values) {
+  const { open, children, ...props } = values
   const items = React.Children.toArray(children)
-
-  console.log(items)
+  console.log(values)
   const trail = useTrail(items.length, {
     config: { mass: 1, tension: 477, friction: 47 },
     opacity: open ? 1 : 0,
@@ -25,7 +25,7 @@ function Trail ({ open, children, ...props }) {
       <div>
         {trail.map(({ x, height, ...rest }, index) => (
           <a.div
-            key={items[index]}
+            key={index}
             className='trails-text'
             style={{
               ...rest,
