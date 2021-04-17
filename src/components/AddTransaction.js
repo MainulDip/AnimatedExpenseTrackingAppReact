@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
-import {useSpring, animated} from 'react-spring'
+import { useSpring, animated } from 'react-spring'
 
 const AddTransaction = () => {
   const [text, setText] = useState('')
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState()
 
   const { addTransaction } = useContext(GlobalContext)
 
@@ -18,6 +18,8 @@ const AddTransaction = () => {
     }
 
     addTransaction(newTransaction)
+    setText('')
+    setAmount('')
   }
   return (
     <>
@@ -30,6 +32,7 @@ const AddTransaction = () => {
             value={text}
             onChange={e => setText(e.target.value)}
             placeholder='Enter text...'
+            required
           />
         </div>
         <div className='form-control'>
@@ -39,6 +42,7 @@ const AddTransaction = () => {
           </label>
           <input
             type='number'
+            required
             value={amount}
             onChange={e => setAmount(e.target.value)}
             placeholder='Enter amount...'
