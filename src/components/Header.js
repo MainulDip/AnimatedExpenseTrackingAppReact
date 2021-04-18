@@ -2,9 +2,9 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <h2>
+        <h1 className="heading">
            Expense Tracking App 
-        </h2>
+        </h1>
     )
 }
 

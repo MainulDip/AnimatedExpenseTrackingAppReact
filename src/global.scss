@@ -19,6 +19,18 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+#root {
+  width: 100%;
+}
+
+.heading {
+  padding: 100px;
+  background: #dfdfdf;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
 .container {
   margin: 30px auto;
   width: 350px;
