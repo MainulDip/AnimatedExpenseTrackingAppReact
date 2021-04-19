@@ -15,12 +15,13 @@ function App () {
     <GlobalProvider>
       <Header />
       <div className='container'>
-        <TransitionStagger>
+        <TransitionStagger delay='777'>
           <Balance />
           <IncomeExpenses />
+
+          <TransactionList />
+          <AddTransaction />
         </TransitionStagger>
-        <TransactionList />
-        <AddTransaction />
       </div>
     </GlobalProvider>
   )

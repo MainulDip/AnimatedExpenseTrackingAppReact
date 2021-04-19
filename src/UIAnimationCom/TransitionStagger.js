@@ -4,13 +4,20 @@ import { useTransition, animated } from 'react-spring'
 const TransitionStagger = props => {
   const { children, ...rest } = props
   const items = React.Children.toArray(children)
-  console.log(items)
+  // console.log(props.delay)
   const transitions = useTransition(items, {
-    config: { mass: 1, tension: 477, friction: 16 },
+    config: { mass: 1, tension: 477, friction: 47 },
     from: { opacity: 0, y: 20 },
-    enter: { opacity: 1, y: 0 },
-    trail: 700,
-    // leave: { opacity: 0, y: 20 }
+    enter: singleItem => async (next, cancel) => {
+      console.log(singleItem.key)
+      await new Promise(resolve =>
+        setTimeout(resolve, props.delay ? +props.delay : 0)
+      )
+      await next({ opacity: 1, y: 0 })
+    },
+    trail: 321,
+    keys: items.map((item, index) => index),
+    leave: { opacity: 0, scaleX: 0.9, y: 27 }
   })
 
   return (
