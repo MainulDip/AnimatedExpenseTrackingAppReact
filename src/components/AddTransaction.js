@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
-import { useSpring, animated } from 'react-spring'
 
 const AddTransaction = () => {
   const [text, setText] = useState('')

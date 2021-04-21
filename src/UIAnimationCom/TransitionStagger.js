@@ -16,8 +16,7 @@ const TransitionStagger = props => {
       await next({ opacity: 1, y: 0 })
     },
     trail: 321,
-    keys: items.map((item, index) => index),
-    leave: { opacity: 0, scaleX: 0.9, y: 27 }
+    keys: items.map((item, index) => index)
   })
 
   return (

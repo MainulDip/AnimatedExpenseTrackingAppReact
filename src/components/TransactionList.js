@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useContext} from 'react'
 import { GlobalContext } from './../context/GlobalState'
 import Transaction from '../components/Transaction'
 import TransitionStagger from '../UIAnimationCom/TransitionStagger'
